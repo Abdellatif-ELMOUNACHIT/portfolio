@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdellatif Elmounachit - Sociologue & Chercheur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        primary: '#1e293b',
+                        secondary: '#475569',
+                        accent: '#d97706',
+                        sand: '#f5f5f4',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        .slide-up {
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e2e8f0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 16px;
+            width: 10px;
+            height: 10px;
+            background: #d97706;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+
+<body class="bg-sand text-primary font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="font-serif text-xl font-bold text-primary">
+                    AE.
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#accueil"
+                        class="text-secondary hover:text-accent transition-colors text-sm font-medium">Accueil</a>
+                    <a href="#profil"
+                        class="text-secondary hover:text-accent transition-colors text-sm font-medium">Profil</a>
+                    <a href="#experience"
+                        class="text-secondary hover:text-accent transition-colors text-sm font-medium">Expérience</a>
+                    <a href="#publications"
+                        class="text-secondary hover:text-accent transition-colors text-sm font-medium">Publications</a>
+                    <a href="#contact"
+                        class="text-secondary hover:text-accent transition-colors text-sm font-medium">Contact</a>
+                </div>
+                <button class="md:hidden text-primary" onclick="toggleMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="#accueil" class="block py-2 text-secondary hover:text-accent">Accueil</a>
+                <a href="#profil" class="block py-2 text-secondary hover:text-accent">Profil</a>
+                <a href="#experience" class="block py-2 text-secondary hover:text-accent">Expérience</a>
+                <a href="#publications" class="block py-2 text-secondary hover:text-accent">Publications</a>
+                <a href="#contact" class="block py-2 text-secondary hover:text-accent">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+<section id="accueil"
+    class="min-h-screen flex items-center justify-center pt-16 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
+
+    <!-- Éléments décoratifs subtils -->
+    <div
+        class="absolute top-20 left-10 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse">
+    </div>
+    <div
+        class="absolute top-40 right-10 w-64 h-64 bg-amber-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse delay-1000">
+    </div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+
+        <!-- CONTENEUR CIRCULAIRE IMAGE -->
+        <div class="mb-8 relative group">
+            <div
+                class="absolute inset-0 bg-gradient-to-r from-blue-600 to-amber-600 rounded-full blur opacity-20 group-hover:opacity-30 transition-opacity duration-500">
+            </div>
+            <div class="relative w-40 h-40 md:w-52 md:h-52 mx-auto">
+                <img src="1.jpeg" alt="Abdellatif Elmounachit - Doctorant en Sociologie"
+                    class="w-full h-full rounded-full object-cover shadow-2xl border-4 border-white transform transition-transform duration-500 group-hover:scale-105" />
+            </div>
+        </div>
+
+        <!-- CONTENU TEXTE -->
+        <div class="slide-up">
+            <div class="mb-6">
+                <span
+                    class="inline-block px-4 py-1.5 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold tracking-wide uppercase border border-blue-100">
+                    Doctorant en Sociologie
+                </span>
+            </div>
+
+            <h1
+                class="font-serif text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-slate-800 via-slate-600 to-slate-800 bg-clip-text text-transparent leading-tight">
+                Abdellatif<br>Elmounachit
+            </h1>
+
+            <p class="text-xl md:text-2xl text-slate-600 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                Chercheur en sciences sociales spécialisé dans la collecte de données de terrain,
+                l'analyse quantitative et la supervision d'enquêtes nationales
+            </p>
+
+            <!-- BADGES -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <span
+                    class="px-5 py-2.5 bg-white rounded-full shadow-sm text-slate-700 text-sm font-medium border border-slate-200 hover:shadow-md transition-shadow">
+                    <span class="w-2 h-2 bg-green-500 rounded-full inline-block mr-2 animate-pulse"></span>
+                    9 ans d'expérience
+                </span>
+                <span
+                    class="px-5 py-2.5 bg-white rounded-full shadow-sm text-slate-700 text-sm font-medium border border-slate-200 hover:shadow-md transition-shadow">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full inline-block mr-2"></span>
+                    40+ enquêteurs supervisés
+                </span>
+                <span
+                    class="px-5 py-2.5 bg-white rounded-full shadow-sm text-slate-700 text-sm font-medium border border-slate-200 hover:shadow-md transition-shadow">
+                    <span class="w-2 h-2 bg-amber-500 rounded-full inline-block mr-2"></span>
+                    Institutions internationales
+                </span>
+            </div>
+
+            <!-- BOUTONS -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact"
+                    class="px-8 py-3.5 bg-slate-800 text-white rounded-full hover:bg-slate-700 transition-all duration-300 font-medium shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                    Me contacter
+                </a>
+                <a href="#experience"
+                    class="px-8 py-3.5 bg-white text-slate-800 border-2 border-slate-200 rounded-full hover:border-slate-800 hover:bg-slate-50 transition-all duration-300 font-medium">
+                    Voir mon parcours
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Profile Section -->
+    <section id="profil" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <div class="fade-in">
+                    <h2 class="font-serif text-3xl font-bold mb-6 text-primary">Profil Professionnel</h2>
+                    <div class="prose prose-lg text-secondary leading-relaxed space-y-4">
+                        <p>
+                            Doctorant en sociologie avec une expertise confirmée dans la collecte de données de terrain
+                            dans les domaines sociaux, économiques et politiques. J'ai contribué à des enquêtes
+                            d'envergure nationale et internationale pour des institutions prestigieuses.
+                        </p>
+                        <p>
+                            Mon parcours m'a permis d'évoluer de simple enquêteur à superviseur régional, coordonnant
+                            des équipes de jusqu'à 40 personnes. J'ai collaboré avec l'Université d'Essex, Princeton,
+                            Harvard, l'Université Mohammed VI Polytechnique, et des organismes comme Afrobarometer et
+                            l'Observatoire National du Développement Humain.
+                        </p>
+                        <p>
+                            En 2025, j'ai renforcé mes compétences en analyse quantitative à travers une formation
+                            intensive de 22 jours au Bénin sur les outils ODA et SPSS, la visualisation statistique et
+                            l'analyse de données.
+                        </p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-sand p-6 rounded-xl hover-lift">
+                        <h3 class="font-semibold text-lg mb-4 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                            Formation
+                        </h3>
+                        <ul class="space-y-3 text-secondary">
+                            <li class="flex justify-between items-start">
+                                <span class="font-medium">Doctorat en Sociologie</span>
+                                <span class="text-sm text-slate-500">En cours</span>
+                            </li>
+                            <li class="flex justify-between items-start">
+                                <span class="font-medium">Master Sociologie</span>
+                                <span class="text-sm text-slate-500">2019 - UH2 Mohammedia</span>
+                            </li>
+                            <li class="flex justify-between items-start">
+                                <span class="font-medium">Licence Sociologie</span>
+                                <span class="text-sm text-slate-500">2017 - UIZ Agadir</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-sand p-6 rounded-xl hover-lift">
+                        <h3 class="font-semibold text-lg mb-4 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                            </svg>
+                            Langues
+                        </h3>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-secondary">Arabe</span>
+                                <span class="text-sm font-medium text-primary">Courant</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-secondary">Français</span>
+                                <span class="text-sm font-medium text-primary">Intermédiaire</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-secondary">Anglais</span>
+                                <span class="text-sm font-medium text-primary">Intermédiaire</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-secondary">Amazigh</span>
+                                <span class="text-sm font-medium text-primary">Maternelle</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-sand p-6 rounded-xl hover-lift">
+                        <h3 class="font-semibold text-lg mb-4 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                            </svg>
+                            Compétences Clés
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-white rounded-full text-sm text-secondary border border-slate-200">SPSS</span>
+                            <span
+                                class="px-3 py-1 bg-white rounded-full text-sm text-secondary border border-slate-200">Excel</span>
+                            <span
+                                class="px-3 py-1 bg-white rounded-full text-sm text-secondary border border-slate-200">ODA</span>
+                            <span
+                                class="px-3 py-1 bg-white rounded-full text-sm text-secondary border border-slate-200">Supervision
+                                terrain</span>
+                            <span
+                                class="px-3 py-1 bg-white rounded-full text-sm text-secondary border border-slate-200">Enquêtes
+                                quantitatives</span>
+                            <span
+                                class="px-3 py-1 bg-white rounded-full text-sm text-secondary border border-slate-200">Collecte
+                                données</span>
+                            <span
+                                class="px-3 py-1 bg-white rounded-full text-sm text-secondary border border-slate-200">Analyse
+                                statistique</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-serif text-3xl font-bold mb-12 text-center text-primary">Expériences Professionnelles</h2>
+
+            <div class="relative max-w-4xl mx-auto">
+                <div class="timeline-line"></div>
+
+                <!-- 2026 -->
+                <div class="relative pl-12 pb-12 fade-in">
+                    <div class="timeline-dot" style="top: 6px;"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover-lift border-l-4 border-accent">
+                        <div class="flex flex-wrap justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-primary">Contrôleur de terrain</h3>
+                            <span
+                                class="text-sm font-medium text-accent bg-accent/10 px-3 py-1 rounded-full">2026</span>
+                        </div>
+                        <p class="text-secondary font-medium mb-2">Enquête nationale sur la situation des ménages ruraux
+                            (10 000 ménages)</p>
+                        <p class="text-sm text-slate-600 mb-3">Provinces : Chichaoua, Essaouira, Chtouka Aït Baha, Al
+                            Haouz</p>
+                        <p class="text-sm text-secondary">Supervision des opérations terrain, contrôle qualité des
+                            données, respect des protocoles méthodologiques et éthiques.</p>
+                    </div>
+                </div>
+
+                <!-- 2025 Superviseur -->
+                <div class="relative pl-12 pb-12 fade-in">
+                    <div class="timeline-dot" style="top: 6px;"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover-lift border-l-4 border-primary">
+                        <div class="flex flex-wrap justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-primary">Superviseur Régional de Terrain</h3>
+                            <span class="text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">Avr-Mai
+                                2025</span>
+                        </div>
+                        <p class="text-secondary font-medium mb-2">Enquête nationale sur les Écoles Pionnières au Maroc
+                        </p>
+                        <p class="text-sm text-slate-600 mb-3">ONDH & GSC | Région Souss-Massa | 4 équipes, 16
+                            enquêteurs</p>
+                        <p class="text-sm text-secondary">Pour le compte du Ministère de l'Éducation Nationale, du
+                            Préscolaire et des Sports.</p>
+                    </div>
+                </div>
+
+                <!-- 2025 Formation Afrobarometer -->
+                <div class="relative pl-12 pb-12 fade-in">
+                    <div class="timeline-dot" style="top: 6px;"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover-lift border-l-4 border-green-500">
+                        <div class="flex flex-wrap justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-primary">Formation Analyse Quantitative</h3>
+                            <span
+                                class="text-sm font-medium text-green-600 bg-green-50 px-3 py-1 rounded-full">2025</span>
+                        </div>
+                        <p class="text-secondary font-medium mb-2">École d'été Afrobarometer - Bénin</p>
+                        <p class="text-sm text-slate-600 mb-3">22 jours intensifs</p>
+                        <p class="text-sm text-secondary">Analyse de données, visualisation statistique, outils ODA et
+                            SPSS.</p>
+                    </div>
+                </div>
+
+                <!-- 2024 Superviseur -->
+                <div class="relative pl-12 pb-12 fade-in">
+                    <div class="timeline-dot" style="top: 6px;"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover-lift border-l-4 border-primary">
+                        <div class="flex flex-wrap justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-primary">Superviseur Régional</h3>
+                            <span
+                                class="text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">Juin-Août
+                                2024</span>
+                        </div>
+                        <p class="text-secondary font-medium mb-2">Enquête nationale sur le Développement Humain</p>
+                        <p class="text-sm text-slate-600 mb-3">ONDH & GSC | Région Souss-Massa | 8 contrôleurs, 24
+                            enquêteurs</p>
+                        <p class="text-sm text-secondary">Coordination Nationale de l'Initiative Nationale pour le
+                            Développement Humain.</p>
+                    </div>
+                </div>
+
+                <!-- 2024 Afrobarometer -->
+                <div class="relative pl-12 pb-12 fade-in">
+                    <div class="timeline-dot" style="top: 6px;"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover-lift border-l-4 border-blue-500">
+                        <div class="flex flex-wrap justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-primary">Enquêteur de terrain</h3>
+                            <span
+                                class="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">2024</span>
+                        </div>
+                        <p class="text-secondary font-medium mb-2">10ᵉ vague Afrobarometer</p>
+                        <p class="text-sm text-slate-600 mb-3">Régions : Oriental, Tanger-Tétouan-Al Hoceima,
+                            Rabat-Salé-Kénitra</p>
+                        <p class="text-sm text-secondary">Démocratie, gouvernance et situation économique au Maroc.</p>
+                    </div>
+                </div>
+
+                <!-- 2023-2024 Barcelone -->
+                <div class="relative pl-12 pb-12 fade-in">
+                    <div class="timeline-dot" style="top: 6px;"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover-lift border-l-4 border-purple-500">
+                        <div class="flex flex-wrap justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-primary">Enquêteur de terrain</h3>
+                            <span
+                                class="text-sm font-medium text-purple-600 bg-purple-50 px-3 py-1 rounded-full">2023-2024</span>
+                        </div>
+                        <p class="text-secondary font-medium mb-2">Étude sur la migration et la diffusion démocratique
+                        </p>
+                        <p class="text-sm text-slate-600 mb-3">Université Autonome de Barcelone | 1 900 personnes</p>
+                        <p class="text-sm text-secondary">Provinces de Béni Mellal, Fqih Ben Salah et Khouribga.</p>
+                    </div>
+                </div>
+
+                <!-- 2022-2023 IRES -->
+                <div class="relative pl-12 pb-12 fade-in">
+                    <div class="timeline-dot" style="top: 6px;"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover-lift border-l-4 border-red-500">
+                        <div class="flex flex-wrap justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-primary">Enquêteur de terrain</h3>
+                            <span
+                                class="text-sm font-medium text-red-600 bg-red-50 px-3 py-1 rounded-full">2022-2023</span>
+                        </div>
+                        <p class="text-secondary font-medium mb-2">Enquête nationale sur les liens sociaux et la
+                            confiance</p>
+                        <p class="text-sm text-slate-600 mb-3">Institut Royal des Études Stratégiques & Cabinet Royal |
+                            6 000 personnes</p>
+                        <p class="text-sm text-secondary">3ème vague, enquête face à face avec tablettes numériques.</p>
+                    </div>
+                </div>
+
+                <!-- Earlier -->
+                <div class="relative pl-12 fade-in">
+                    <div class="timeline-dot" style="top: 6px;"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover-lift border-l-4 border-slate-400">
+                        <div class="flex flex-wrap justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-primary">Autres expériences significatives</h3>
+                            <span
+                                class="text-sm font-medium text-slate-600 bg-slate-100 px-3 py-1 rounded-full">2018-2023</span>
+                        </div>
+                        <ul class="text-sm text-secondary space-y-2">
+                            <li>• Étude sur l'accès aux services financiers - C4ED/Université de Mannheim (2019)</li>
+                            <li>• Besoins juridiques au Maroc - HiiL Innovating Justice (2018)</li>
+                            <li>• Attitudes envers les migrants - Université Harvard/Tennessee (2018)</li>
+                            <li>• 7ème vague Afrobarometer - CDD-Ghana/Université du Cap (2018)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-serif text-3xl font-bold mb-12 text-center text-primary">Publications</h2>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-sand p-8 rounded-2xl hover-lift border border-slate-200">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-xl text-primary mb-2">
+                                Les jeunes marocains expriment peu de confiance aux dirigeants et partis politiques
+                            </h3>
+                            <p class="text-secondary mb-4">Afrobarometer, Dépêche No. 1150, Maroc (2026)</p>
+                            <p class="text-sm text-slate-600 mb-4">
+                                Analyse des données Afrobarometer sur la confiance des jeunes Marocains envers les
+                                institutions politiques nationales.
+                            </p>
+                            <a href="https://www.afrobarometer.org/publication/ad1150-les-jeunes-marocains-expriment-peu-de-confiance-aux-dirigeants-et-partis-politiques/"
+                                target="_blank"
+                                class="inline-flex items-center text-accent hover:text-primary transition-colors font-medium">
+                                Lire la publication
+                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="mt-16">
+                <h3 class="font-serif text-2xl font-bold mb-8 text-center text-primary">Certifications & Formations</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-slate-50 p-5 rounded-lg border border-slate-200 hover-lift">
+                        <div class="text-accent font-semibold text-sm mb-2">Octobre 2025</div>
+                        <h4 class="font-medium text-primary mb-1">Atelier ENAS</h4>
+                        <p class="text-sm text-secondary">Protection des enfants non accompagnés - Ministère des
+                            Affaires étrangères du Danemark</p>
+                    </div>
+                    <div class="bg-slate-50 p-5 rounded-lg border border-slate-200 hover-lift">
+                        <div class="text-accent font-semibold text-sm mb-2">Août 2025</div>
+                        <h4 class="font-medium text-primary mb-1">Afrobarometer Data Analysis</h4>
+                        <p class="text-sm text-secondary">Formation en ligne en analyse de base des données (français)
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 p-5 rounded-lg border border-slate-200 hover-lift">
+                        <div class="text-accent font-semibold text-sm mb-2">Juin 2025</div>
+                        <h4 class="font-medium text-primary mb-1">Protection de l'enfance</h4>
+                        <p class="text-sm text-secondary">Association Bayti - Projet Rasif, Casablanca</p>
+                    </div>
+                    <div class="bg-slate-50 p-5 rounded-lg border border-slate-200 hover-lift">
+                        <div class="text-accent font-semibold text-sm mb-2">2024</div>
+                        <h4 class="font-medium text-primary mb-1">Social Work Practice</h4>
+                        <p class="text-sm text-secondary">Coursera - Advocating Social Justice and Change (30 jours)</p>
+                    </div>
+                    <div class="bg-slate-50 p-5 rounded-lg border border-slate-200 hover-lift">
+                        <div class="text-accent font-semibold text-sm mb-2">2021</div>
+                        <h4 class="font-medium text-primary mb-1">Pensée et planification stratégique</h4>
+                        <p class="text-sm text-secondary">Plateforme Rwaq (32 jours)</p>
+                    </div>
+                    <div class="bg-slate-50 p-5 rounded-lg border border-slate-200 hover-lift">
+                        <div class="text-accent font-semibold text-sm mb-2">2021</div>
+                        <h4 class="font-medium text-primary mb-1">Soutien psychologique & Traumatisme</h4>
+                        <p class="text-sm text-secondary">Plateforme Rwaq - Plusieurs modules spécialisés</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-primary text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="font-serif text-3xl font-bold mb-6">Contact</h2>
+                    <p class="text-slate-300 mb-8 text-lg">
+                        Intéressé par une collaboration ou une mission de recherche ? N'hésitez pas à me contacter.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
+                                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-sm text-slate-400">Email</div>
+                                <a href="mailto:abdellatifelmounachit927@gmail.com"
+                                    class="text-white hover:text-accent transition-colors">
+                                    abdellatifelmounachit927@gmail.com
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
+                                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-sm text-slate-400">Téléphone & WhatsApp</div>
+                                <a href="tel:+212681592585" class="text-white hover:text-accent transition-colors">
+                                    +212 6 81 59 25 85
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
+                                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-sm text-slate-400">Localisation</div>
+                                <span class="text-white">Belfaa, Chtouka Ait Baha, Souss Massa, Maroc</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 p-8 rounded-2xl backdrop-blur-sm border border-white/10">
+                    <h3 class="font-semibold text-xl mb-6">Envoyez un message</h3>
+                    <form class="space-y-4" onsubmit="event.preventDefault(); alert('Message envoyé !');">
+                        <div>
+                            <label class="block text-sm text-slate-300 mb-1">Nom</label>
+                            <input type="text"
+                                class="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-accent"
+                                placeholder="Votre nom">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-slate-300 mb-1">Email</label>
+                            <input type="email"
+                                class="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-accent"
+                                placeholder="votre@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-slate-300 mb-1">Message</label>
+                            <textarea rows="4"
+                                class="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-accent"
+                                placeholder="Votre message..."></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full py-3 bg-accent text-white rounded-lg font-medium hover:bg-accent/90 transition-colors">
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center text-sm">
+        <div class="max-w-6xl mx-auto px-4">
+            <p>&copy; 2026 Abdellatif Elmounachit. Tous droits réservés.</p>
+            <p class="mt-2">CIN: JH7030 | Souss Massa, Maroc</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
